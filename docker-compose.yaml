@@ -1,0 +1,12 @@
+services:
+  reverseproxy:
+    image: reverseproxy
+    ports:
+      - 8080:8080
+    restart: always
+
+  proxyapp:
+    depends_on:
+      - reverseproxy
+    image: proxyapp
+    restart: on-failure

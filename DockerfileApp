@@ -1,0 +1,5 @@
+FROM openjdk:17-alpine
+MAINTAINER bapadua.com
+COPY target/demo-reverse-proxy-0.0.1-SNAPSHOT.jar proxy-server.jar
+ENTRYPOINT ["java", "-jar", "/proxy-server.jar"]
+
